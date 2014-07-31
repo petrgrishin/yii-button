@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "file": "button.js",
+  "sourceRoot": "",
+  "sources": [
+    "button.coffee"
+  ],
+  "names": [],
+  "mappings": ";AAAA;AAAA,EAAA,GAAG,CAAC,QAAJ,CAAa,QAAb,EAAuB,SAAC,MAAD,EAAS,KAAT,EAAgB,OAAhB,GAAA,CAAvB,CAAA,CAAA;AAAA"
+}
