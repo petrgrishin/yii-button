@@ -10,6 +10,10 @@ HtmlTag::create('button')
     ->setContent($this->getParam('title'))
     ->run();
 
+$this->widget(\PetrGrishin\LoaderAction\LoaderActionWidget::className(), 'action', array(
+    'url' => $this->getParam('url'),
+))->run();
+
 $this->setJsParams(array(
     'containerId' => $containerId,
     'url' => $this->getParam('url'),
