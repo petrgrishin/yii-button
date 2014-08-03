@@ -8,7 +8,8 @@
         "petrgrishin/yii-widget": "~1.0",
         "petrgrishin/yii-view": "dev-master",
         "petrgrishin/yii-html-tag": "dev-master",
-        "petrgrishin/yii-loader-action": "dev-master"
+        "petrgrishin/yii-loader-action": "dev-master",
+        "petrgrishin/yii-bootstrap": "dev-master"
     },
     "require-dev": {
         "league/phpunit-coverage-listener": "~1.0"
