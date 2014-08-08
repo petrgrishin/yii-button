@@ -5,11 +5,16 @@
  */
 use PetrGrishin\HtmlTag\HtmlTag;
 
-HtmlTag::create('button')
+$button = HtmlTag::create('button')
     ->attr('id', $containerId = $this->getUniqueIdentifier('container'))
     ->addClass('btn')
-    ->setContent($this->getParam('title'))
-    ->run();
+    ->setContent($this->getParam('title'));
+
+if ($type = $this->getParam('type', false)) {
+    $button->addClass(sprintf('btn-%s', $type));
+}
+
+$button->run();
 
 $this->widget(\PetrGrishin\LoaderAction\LoaderActionWidget::className(), 'action', array(
     'url' => $this->getParam('url'),
