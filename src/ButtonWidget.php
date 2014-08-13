@@ -7,6 +7,7 @@ namespace PetrGrishin\Button;
 
 
 use PetrGrishin\Button\Exception\ButtonWidgetException;
+use PetrGrishin\LoaderAction\Action;
 use PetrGrishin\Widget\BaseWidget;
 
 class ButtonWidget extends BaseWidget {
@@ -20,8 +21,8 @@ class ButtonWidget extends BaseWidget {
 
     /** @var string */
     private $title;
-    /** @var string */
-    private $url;
+    /** @var Action */
+    private $action;
     /** @var string */
     private $type;
 
@@ -34,6 +35,11 @@ class ButtonWidget extends BaseWidget {
         self::TYPE_DANGER,
         self::TYPE_LINK,
     );
+
+    public function init() {
+        parent::init();
+        $this->action = Action::create();
+    }
 
     public function run() {
         $this->render('button', array(
@@ -53,12 +59,19 @@ class ButtonWidget extends BaseWidget {
     }
 
     public function getUrl() {
-        return $this->url;
+        return $this->getAction()->getUrl();
     }
 
     public function setUrl($url) {
-        $this->url = $url;
+        $this->getAction()->setUrl($url);
         return $this;
+    }
+
+    public function getAction() {
+        if (empty($this->action)) {
+            throw new ButtonWidgetException('Action not exists');
+        }
+        return $this->action;
     }
 
     public function getType() {
