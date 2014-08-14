@@ -70,7 +70,7 @@ class ButtonWidget extends BaseWidget {
     }
 
     public function getType() {
-        return $this->type;
+        return $this->type ?: self::TYPE_DEFAULT;
     }
 
     public function setType($type) {
