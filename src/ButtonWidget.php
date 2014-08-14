@@ -36,11 +36,6 @@ class ButtonWidget extends BaseWidget {
         self::TYPE_LINK,
     );
 
-    public function init() {
-        parent::init();
-        $this->action = Action::create();
-    }
-
     public function run() {
         $this->render('button', array(
             'title' => $this->getTitle(),
@@ -69,7 +64,7 @@ class ButtonWidget extends BaseWidget {
 
     public function getAction() {
         if (empty($this->action)) {
-            throw new ButtonWidgetException('Action not exists');
+            $this->action = Action::create();
         }
         return $this->action;
     }
