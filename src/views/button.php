@@ -6,7 +6,7 @@
 use PetrGrishin\HtmlTag\HtmlTag;
 
 $button = HtmlTag::create('button')
-    ->attr('id', $containerId = $this->getUniqueIdentifier('container'))
+    ->setAttr('id', $containerId = $this->getUniqueIdentifier('container'))
     ->addClass('btn')
     ->setContent($this->getParam('title'));
 
