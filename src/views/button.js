@@ -9,8 +9,8 @@
       return action.load();
     });
     return {
-      onApply: function(callback) {
-        return action.onApply(callback);
+      bindApply: function(callback) {
+        return action.bindApply(callback);
       }
     };
   });

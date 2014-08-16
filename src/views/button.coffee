@@ -5,5 +5,5 @@ App.register "{{id}}", (params, scope, widgets) ->
     e.preventDefault()
     action.load()
 
-  onApply: (callback) ->
-    action.onApply callback
+  bindApply: (callback) ->
+    action.bindApply callback
